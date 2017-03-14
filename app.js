@@ -76,6 +76,7 @@ var qr_svg = qr.image(metin, { type: 'png' });
 qr_svg.pipe(require('fs').createWriteStream('qrCodes/'+metin+ '.png'));
 
 }
-app.listen(8080, function() {
+var port = process.env.PORT || 8080;
+app.listen(port, function() {
   console.log('Server running at http://127.0.0.1:8080/');
 });
